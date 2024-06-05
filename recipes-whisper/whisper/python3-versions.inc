@@ -1,0 +1,1 @@
+PREFERRED_VERSION_python3-openai-whisper = "20231117"
