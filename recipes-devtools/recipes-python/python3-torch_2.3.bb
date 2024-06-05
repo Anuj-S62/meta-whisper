@@ -1,3 +1,8 @@
+# lets strongly consider meta-python-ai ... 
+# recipe python3-pytorch is arch-independent
+# we are bound to qemux86 here !
+
+
 #
 # hmm , did you look at the layerindex for example ... 
 #  layers.openembedded.org
@@ -50,7 +55,9 @@ DEPENDS += " \
     protobuf-native \
     coreutils-native \
     sleef-native \
-    protobuf \
+    python3-pyyaml-native \
+    python3-typing_extensions-native \
+    protobuf-native \
 "
 
 inherit cmake setuptools3
@@ -63,8 +70,11 @@ do_configure:prepend(){
     git submodule update --init --recursive 
     #--jobs=$(nproc)
 
-    # install required modules
-    pip3 install pyyaml typing_extensions opt-einsum
+    # install required modules 
+    #pip3 install opt-einsum
+    # FIXME:: 
+    ########## --> need recipe for python3-opt_einsum  <---
+    ########## --> 
 }
 
 do_compile() {
@@ -82,7 +92,7 @@ do_compile() {
     export CMAKE_SYSTEM_PROCESSOR=qemux86-64
     export NUMPY_INCLUDE_DIR=${PKG_CONFIG_SYSROOT_DIR}/usr/lib/python${PYTHON_BASEVERSION}/site-packages/numpy/core/include
     export CMAKE_PREFIX_PATH=${STAGING_DIR_TARGET}/usr
-    export CAFFE2_CPU_FLAGS="-mfpu=neon -mfloat-abi=hard"
+    #export CAFFE2_CPU_FLAGS="-mfpu=neon -mfloat-abi=hard"
     export BUILD_TEST=0
     setuptools3_do_compile
 }

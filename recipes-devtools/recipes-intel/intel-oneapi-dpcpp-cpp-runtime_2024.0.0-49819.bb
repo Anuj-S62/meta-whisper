@@ -8,7 +8,7 @@ and compatible processors."
 
 HOMEPAGE = "https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html"
 
-LICENSE="EULA"
+LICENSE="INTELoneAPIDPCEULA"
 
 COMPILERMAINVER = "2024.0"
 
