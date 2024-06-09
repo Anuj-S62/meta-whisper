@@ -12,6 +12,8 @@ require ${BPN}-crates.inc
 
 S = "${WORKDIR}/tiktoken-0.7.0"
 
+DEPENDS += "python3-regex"
+
 RDEPENDS_${PN} = "python3-regex python3-requests python3-urllib3"
 
 inherit cargo setuptools3 python_setuptools3_rust cargo-update-recipe-crates

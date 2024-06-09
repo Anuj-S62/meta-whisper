@@ -9,11 +9,11 @@ SRCREV = "ba3f3cd54b0e5b8ce1ab3de13e32122d0d5f98ab"
 S = "${WORKDIR}/git"
 
 
-DEPENDS += "python3-wheel-native ffmpeg python3-numpy python3-pytorch python3-tqdm python3-tiktoken python3-numba python3-more-itertools"
+DEPENDS += "python3-wheel-native ffmpeg python3-numpy python3-pytorch python3-tqdm python3-tiktoken python3-more-itertools"
 
 inherit setuptools3 python3native
 
-#RDEPENDS:${PN} += "ffmpeg python3-numpy python3-pytorch python3-tqdm python3-tiktoken python3-numba python3-more-itertools"
+RDEPENDS:${PN} += "ffmpeg python3-numba python3-regex python3-pytorch python3-tqdm python3-tiktoken"
 #FILES:${PN} += "${PYTHON_SITEPACKAGES_DIR}/*"
 
 

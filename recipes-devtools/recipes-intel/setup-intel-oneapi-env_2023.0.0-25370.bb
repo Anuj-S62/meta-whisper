@@ -1,8 +1,10 @@
 SUMMARY = "Intel® oneAPI runtime libraries environment set up"
 DESCRIPTION = "Recipe to set up the environment for Intel® oneAPI runtime libraries \
 via configuration file in ld.so.conf.d directory."
+#FIX it  
+#LICENSE = "INTELoneAPIDPCEULA"
 
-LICENSE = "EULA"
+LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = "file://${CUSTOM_LICENSES_PATH}/EULA;md5=7bfc91523de2e84e7131d0eacf2827d4"
 
 SRC_URI = "file://intel-oneapi-runtime.conf"

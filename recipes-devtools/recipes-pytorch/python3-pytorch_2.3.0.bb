@@ -24,7 +24,7 @@ DEPENDS = " \
 
 DEPENDS:append:class-target = " \
         zstd-native intel-oneapi-mkl intel-oneapi-dpcpp-cpp \
-        onednn tbb glog gloo numactl opencv \
+        onednn tbb glog numactl opencv \
         opencl-headers virtual/opencl-icd \
         shaderc spirv-tools mesa vulkan-headers vulkan-loader \
         python3-numpy python3-typing-extensions python3-pyyaml \
@@ -268,7 +268,6 @@ EXTRA_OECMAKE = "\
 -DBUILD_CAFFE2=ON \
 -DBUILD_CAFFE2_OPS=ON \
 -DCAFFE2_CUSTOM_PROTOC_EXECUTABLE=${STAGING_DIR_NATIVE}${PYTHON_SITEPACKAGES_DIR}/torch/bin/protoc \
--DUSE_SYSTEM_GLOO=ON \
 -DUSE_SYSTEM_SLEEF=ON \
 -DUSE_GOLD_LINKER=ON \
 -DUSE_TBB=ON \
