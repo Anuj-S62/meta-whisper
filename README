@@ -1,41 +1,35 @@
-This README file contains information on the contents of the meta-whisper layer.
+## Introduction
 
-Please see the corresponding sections below for details.
+`meta-whisper` is a Yocto layer for integrating Whisper AI into Automotive Grade Linux (AGL) images.
 
-Dependencies
-============
+## Layer Dependencies
 
-  URI: <first dependency>
-  branch: <branch name>
+* OpenEmbedded `meta-python-ai` Layer:
+  - URI: https://github.com/zboszor/meta-python-ai.git
+  - Branch: scarthgap
 
-  URI: <second dependency>
-  branch: <branch name>
+## Add meta-whisper layer to your build
+ 
+```shell
+$ bitbake-layers add-layer meta-whisper 
+```
 
-  .
-  .
-  .
+Add the following to the conf/local.conf:
 
-Patches
-=======
+```shell
+DISTRO_FEATURES:append = " vulkan"
 
-Please submit any patches against the meta-whisper layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
+IMAGE_INSTALL:append = " whisper"
+```
 
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+## Maintenance
 
-Table of Contents
-=================
+All patches must be submitted via the AGL Gerrit instance at
+<https://gerrit.automotivelinux.org>.  See this wiki page for
+details:
 
-  I. Adding the meta-whisper layer to your build
- II. Misc
+<https://wiki.automotivelinux.org/agl-distro/contributing>
 
-
-I. Adding the meta-whisper layer to your build
-=================================================
-
-Run 'bitbake-layers add-layer meta-whisper'
-
-II. Misc
-========
-
---- replace with specific information about the meta-whisper layer ---
+Layer maintainers:
+* Anuj Solanki <anuj603362@gmail.com>
+* Jan-Simon Möller <jsmoeller@linuxfoundation.org>
